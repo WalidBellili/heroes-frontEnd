@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
-import Header from "../components/Header";
 
 const Heros = () => {
   const [heroes, setHeroes] = useState([]);
@@ -17,10 +16,12 @@ const Heros = () => {
   // console.log(heroes);
   return (
     <>
-      <Header />
-      {heroes.map((hero) => {
-        return <Card hero={hero} />
-      })}
+      <h1>All Heroes</h1>
+      <section className="card-container">
+        {heroes.map((hero) => {
+          return <Card hero={hero} />;
+        })}
+      </section>
     </>
   );
 };
