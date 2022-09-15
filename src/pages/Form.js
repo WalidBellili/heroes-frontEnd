@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const Form = () => {
-  const [nameValue, setNameValue] = useState("");
+  const [name, setName] = useState("");
   const [image, setImage] = useState("");
   const [power, setPower] = useState("");
   const [age, setAge] = useState("");
@@ -10,7 +10,7 @@ const Form = () => {
   const [isAlive, setIsAlive] = useState(false);
 
   const handleChangeName = (e) => {
-    setNameValue(e.target.value);
+    setName(e.target.value);
   };
   const handleImageChange = (e) => {
     setImage(e.target.value);
@@ -28,25 +28,32 @@ const Form = () => {
     setIsAlive(e.target.checked);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(nameValue);
-    console.log(image);
-    console.log(power);
-    console.log(age);
-    console.log(color);
-    console.log(isAlive);
+
+    const body = {
+      name,
+      image,
+      power: power.split(","),
+      age,
+      color,
+      isAlive,
+    };
+    const request = await fetch(`http://localhost:5000/heroes`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+      body: JSON.stringify(body),
+    });
+    const response = await request.json();
+    console.log(response);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="name">Name</label>
-      <input
-        type="text"
-        id="name"
-        value={nameValue}
-        onChange={handleChangeName}
-      />
+      <input type="text" id="name" value={name} onChange={handleChangeName} />
       <label htmlFor="image">Image</label>
       <input
         type="text"

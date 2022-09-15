@@ -13,7 +13,7 @@ const Heros = () => {
     const response = await request.json();
     setHeroes(response);
   };
-  // console.log(heroes);
+
   return (
     <>
       <h1>All Heroes</h1>

@@ -9,6 +9,7 @@ const SingleHeros = () => {
 
   useEffect(() => {
     fetchAHero();
+    // eslint-disable-next-line
   }, []);
 
   const fetchAHero = async () => {
