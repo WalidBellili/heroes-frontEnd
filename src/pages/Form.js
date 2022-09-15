@@ -1,5 +1,5 @@
-import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const [name, setName] = useState("");
@@ -8,6 +8,8 @@ const Form = () => {
   const [age, setAge] = useState("");
   const [color, setColor] = useState("");
   const [isAlive, setIsAlive] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleChangeName = (e) => {
     setName(e.target.value);
@@ -47,7 +49,7 @@ const Form = () => {
       body: JSON.stringify(body),
     });
     const response = await request.json();
-    console.log(response);
+    navigate(`/${response.slug}`);
   };
 
   return (
