@@ -8,6 +8,7 @@ const Form = () => {
   const [age, setAge] = useState("");
   const [color, setColor] = useState("");
   const [isAlive, setIsAlive] = useState(false);
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
 
@@ -39,7 +40,7 @@ const Form = () => {
       power: power.split(","),
       age,
       color,
-      isAlive,
+      // isAlive,
     };
     const request = await fetch(`http://localhost:5000/heroes`, {
       method: "POST",
@@ -48,8 +49,13 @@ const Form = () => {
       },
       body: JSON.stringify(body),
     });
-    const response = await request.json();
-    navigate(`/${response.slug}`);
+
+    if (request.status === 400) {
+      setError(request.statusText);
+    } else {
+      const response = await request.json();
+      navigate(`/${response.slug}`);
+    }
   };
 
   return (
@@ -85,7 +91,10 @@ const Form = () => {
         id="isAlive"
         onChange={handleChangeAliveValue}
       />
+
       <button type="submit">Create</button>
+
+      {error && <h2>Error occured</h2>}
     </form>
   );
 };
