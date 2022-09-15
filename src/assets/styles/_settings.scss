@@ -1,14 +1,15 @@
 body {
   height: 100vh;
   width: 100%;
-  background: whitesmoke;
+  background: url("../img/bg.jpg") center/cover;
+
   text-align: center;
   a,
   a:visited {
     cursor: pointer;
     position: relative;
     text-decoration: none;
-    color: black;
+    color: wheat;
     transition: 0.1s linear;
     font-size: calc(0.8rem + 0.8vw);
   }

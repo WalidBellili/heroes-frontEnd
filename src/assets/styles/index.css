@@ -1,7 +1,7 @@
 body {
   height: 100vh;
   width: 100%;
-  background: whitesmoke;
+  background: url("../img/bg.jpg") center/cover;
   text-align: center;
 }
 body a,
@@ -9,7 +9,7 @@ body a:visited {
   cursor: pointer;
   position: relative;
   text-decoration: none;
-  color: black;
+  color: wheat;
   transition: 0.1s linear;
   font-size: calc(0.8rem + 0.8vw);
 }
@@ -58,6 +58,9 @@ header {
   align-items: center;
   justify-content: space-around;
   margin-top: 50px;
+  color: whitesmoke;
+  font-size: 25px;
+  letter-spacing: 2px;
 }
 .card-container .card {
   display: flex;
@@ -69,4 +72,12 @@ header {
 .card-container .card img {
   width: 35vw;
   height: 300px;
+  border-radius: 20px;
+  box-shadow: 14px 12px 275px 43px rgba(0, 0, 0, 0.99);
+  -webkit-box-shadow: 14px 12px 275px 43px rgba(0, 0, 0, 0.99);
+  -moz-box-shadow: 14px 12px 275px 43px rgba(0, 0, 0, 0.99);
+}
+.card-container .txt {
+  background: #000;
+  width: 35vw;
 }/*# sourceMappingURL=index.css.map */
