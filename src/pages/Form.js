@@ -40,7 +40,7 @@ const Form = () => {
       power: power.split(","),
       age,
       color,
-      // isAlive,
+      isAlive,
     };
     const request = await fetch(`http://localhost:5000/heroes`, {
       method: "POST",
@@ -60,41 +60,44 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name</label>
-      <input type="text" id="name" value={name} onChange={handleChangeName} />
-      <label htmlFor="image">Image</label>
-      <input
-        type="text"
-        id="image"
-        value={image}
-        onChange={handleImageChange}
-      />
-      <label htmlFor="power">Power</label>
-      <input
-        type="text"
-        id="power"
-        value={power}
-        onChange={handleChangePower}
-      />
-      <label htmlFor="age">Age</label>
-      <input type="number" id="age" value={age} onChange={handleChangeAge} />
-      <label htmlFor="color">Color</label>
-      <input
-        type="text"
-        id="color"
-        value={color}
-        onChange={handleChangeColor}
-      />
-      <input
-        type="checkbox"
-        checked={isAlive}
-        id="isAlive"
-        onChange={handleChangeAliveValue}
-      />
+      <section className="card-form">
+        <h2>Post your Hero</h2>
+        <label htmlFor="name">Name</label>
+        <input type="text" id="name" value={name} onChange={handleChangeName} />
+        <label htmlFor="image">Image</label>
+        <input
+          type="text"
+          id="image"
+          value={image}
+          onChange={handleImageChange}
+        />
+        <label htmlFor="power">Power</label>
+        <input
+          type="text"
+          id="power"
+          value={power}
+          onChange={handleChangePower}
+        />
+        <label htmlFor="age">Age</label>
+        <input type="number" id="age" value={age} onChange={handleChangeAge} />
+        <label htmlFor="color">Color</label>
+        <input
+          type="text"
+          id="color"
+          value={color}
+          onChange={handleChangeColor}
+        />
+        <input
+          type="checkbox"
+          checked={isAlive}
+          id="isAlive"
+          onChange={handleChangeAliveValue}
+        />
 
-      <button type="submit">Create</button>
+        <button type="submit">Create</button>
 
-      {error && <h2>Error occured</h2>}
+        {error && <h2>Error occured</h2>}
+      </section>
     </form>
   );
 };
