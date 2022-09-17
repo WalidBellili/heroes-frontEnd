@@ -1,4 +1,5 @@
-import React from "react";
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 const PutForm = () => {
   const [name, setName] = useState("");
@@ -10,6 +11,7 @@ const PutForm = () => {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
+  const { slug } = useParams();
 
   const handleChangeName = (e) => {
     setName(e.target.value);
@@ -41,7 +43,7 @@ const PutForm = () => {
       color,
       isAlive,
     };
-    const request = await fetch(`http://localhost:5000/heroes`, {
+    const request = await fetch(`http://localhost:5000/heroes/${slug}`, {
       method: "PUT",
       headers: {
         "Content-Type": "Application/json",

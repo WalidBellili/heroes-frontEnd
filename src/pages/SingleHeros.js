@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import PutForm from "./PutForm";
 
 const SingleHeros = () => {
   const [hero, setHero] = useState([]);
@@ -35,6 +36,7 @@ const SingleHeros = () => {
           <button onClick={handleDeleteClick}>EDIT</button>
         </div>
       </article>
+      <PutForm hero={hero} />
     </section>
   );
 };
