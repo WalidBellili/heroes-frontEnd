@@ -10,14 +10,19 @@ const SingleHeros = () => {
   useEffect(() => {
     fetchAHero();
     // eslint-disable-next-line
-  }, []);
+  }, [slug]);
 
   const fetchAHero = async () => {
     const request = await fetch(`http://localhost:5000/heroes/${slug}`);
     const response = await request.json();
     setHero(response);
   };
-  console.log(hero);
+  const handleDeleteClick = async () => {
+    const request = await fetch(`http://localhost:5000/heroes/${slug}`, {
+      method: "DELETE",
+    });
+  };
+
   return (
     <section className="card-container">
       <article className="card">
@@ -26,6 +31,8 @@ const SingleHeros = () => {
           <p>{hero.name}</p>
 
           <p>{hero.age}</p>
+
+          <button onClick={handleDeleteClick}>EDIT</button>
         </div>
       </article>
     </section>

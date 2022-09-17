@@ -70,16 +70,20 @@ header {
   gap: 2%;
 }
 .card-container .card img {
-  width: 35vw;
+  width: 20vw;
   height: 300px;
-  border-radius: 20px;
   box-shadow: 14px 12px 275px 43px rgba(0, 0, 0, 0.99);
   -webkit-box-shadow: 14px 12px 275px 43px rgba(0, 0, 0, 0.99);
   -moz-box-shadow: 14px 12px 275px 43px rgba(0, 0, 0, 0.99);
 }
 .card-container .txt {
   background: #000;
-  width: 35vw;
+  width: 20vw;
+}
+.card-container li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 form {
