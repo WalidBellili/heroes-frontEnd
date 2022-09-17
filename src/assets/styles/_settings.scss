@@ -9,9 +9,9 @@ body {
     cursor: pointer;
     position: relative;
     text-decoration: none;
-    color: wheat;
+    color: black;
     transition: 0.1s linear;
-    font-size: calc(0.8rem + 0.8vw);
+    font-size: calc(0.8rem + 1vw);
   }
   a::after {
     content: "";

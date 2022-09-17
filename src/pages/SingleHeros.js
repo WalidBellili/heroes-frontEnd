@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import PutForm from "./PutForm";
 
 const SingleHeros = () => {
   const [hero, setHero] = useState([]);
-
+  const navigate = useNavigate();
   const { slug } = useParams();
 
   useEffect(() => {
@@ -22,6 +22,7 @@ const SingleHeros = () => {
     const request = await fetch(`http://localhost:5000/heroes/${slug}`, {
       method: "DELETE",
     });
+    navigate("/");
   };
 
   return (
@@ -33,7 +34,7 @@ const SingleHeros = () => {
 
           <p>{hero.age}</p>
 
-          <button onClick={handleDeleteClick}>EDIT</button>
+          <button onClick={handleDeleteClick}>Delete</button>
         </div>
       </article>
       <PutForm hero={hero} />
