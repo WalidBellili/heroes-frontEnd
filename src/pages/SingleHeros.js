@@ -22,9 +22,10 @@ const SingleHeros = () => {
     const request = await fetch(`http://localhost:5000/heroes/${slug}`, {
       method: "DELETE",
     });
+    console.log(request);
     navigate("/");
   };
-
+  
   return (
     <section className="card-container">
       <article className="card">

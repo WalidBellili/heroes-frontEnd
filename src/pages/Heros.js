@@ -6,13 +6,15 @@ const Heros = () => {
   const [heroes, setHeroes] = useState([]);
   useEffect(() => {
     fetchHeroes();
+    // eslint-disable-next-line
   }, []);
 
   const fetchHeroes = async () => {
-    const request = await fetch(`${process.env.REACT_APP_API_URL}heroes`);
+    const request = await fetch(`http://localhost:5000/heroes`);
     const response = await request.json();
     setHeroes(response);
   };
+  console.log(heroes);
 
   return (
     <>
