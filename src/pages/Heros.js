@@ -1,9 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
+
 import Card from "../components/Card";
 
 const Heros = () => {
   const [heroes, setHeroes] = useState([]);
+
   useEffect(() => {
     fetchHeroes();
     // eslint-disable-next-line
