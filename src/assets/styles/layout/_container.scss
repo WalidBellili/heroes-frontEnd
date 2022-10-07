@@ -1,0 +1,20 @@
+.card-container {
+  //   background: #000;
+  text-align: center;
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10%;
+
+    .card {
+      border: 3px solid;
+      margin: 20px;
+      img {
+        width: 180px;
+        height: 150px;
+      }
+    }
+  }
+}

@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <Link to={"/"}>Home</Link>
-      <Link to={"/form"}>Formulaire</Link>
+      <nav>
+        <Link to={"/"}>HOME</Link>
+        <Link to={"/form"}>ADD ONE</Link>
+      </nav>
     </header>
   );
 };

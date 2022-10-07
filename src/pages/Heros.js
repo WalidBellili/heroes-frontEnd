@@ -18,11 +18,17 @@ const Heros = () => {
 
   return (
     <>
-      <h1>All Heroes</h1>
+      <div className="title">
+        <article>
+          <h1>Heroes</h1>
+        </article>
+      </div>
       <section className="card-container">
-        {heroes.map((hero) => {
-          return <Card hero={hero} />;
-        })}
+        <div>
+          {heroes.map((hero) => {
+            return <Card hero={hero} />;
+          })}
+        </div>
       </section>
     </>
   );

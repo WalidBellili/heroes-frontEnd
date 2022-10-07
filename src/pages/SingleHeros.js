@@ -25,16 +25,14 @@ const SingleHeros = () => {
     console.log(request);
     navigate("/");
   };
-  
+
   return (
-    <section className="card-container">
-      <article className="card">
+    <section className="card-hero">
+      <article className="card single">
         <img src={hero.image} alt={hero.name} />
         <div className="txt">
           <p>{hero.name}</p>
-
           <p>{hero.age}</p>
-
           <button onClick={handleDeleteClick}>Delete</button>
         </div>
       </article>

@@ -87,6 +87,7 @@ const Form = () => {
           value={color}
           onChange={handleChangeColor}
         />
+
         <input
           type="checkbox"
           checked={isAlive}

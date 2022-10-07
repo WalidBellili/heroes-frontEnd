@@ -4,14 +4,12 @@ const Card = ({ hero }) => {
   console.log(hero);
   return (
     <article className="card">
+      <p>{hero.name}</p>
       <Link to={`/${hero.slug}`}>
         <img src={hero.image} alt={hero.name} />
         <div className="txt">
-          <p>{hero.name}</p>
-          <p>{hero.age}</p>
-
           {hero.power.map((p) => {
-            return <li>{p}</li>;
+            return <p>{p}</p>;
           })}
         </div>
       </Link>
