@@ -1,4 +1,3 @@
-import React from "react";
 import { useEffect, useState } from "react";
 
 import Card from "../components/Card";
@@ -12,7 +11,9 @@ const Heros = () => {
   }, []);
 
   const fetchHeroes = async () => {
-    const request = await fetch(`http://localhost:5000/heroes`);
+    const request = await fetch(
+      `https://new-hero-konexio.herokuapp.com/heroes`
+    );
     const response = await request.json();
     setHeroes(response);
   };
