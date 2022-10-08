@@ -20,6 +20,7 @@ const SingleHeros = () => {
     const response = await request.json();
     setHero(response);
   };
+  console.log(hero);
   const handleDeleteClick = async () => {
     const request = await fetch(
       `https://new-hero-konexio.herokuapp.com/heroes/${slug}`,
