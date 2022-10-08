@@ -22,7 +22,7 @@ const SingleHeros = () => {
   };
   const handleDeleteClick = async () => {
     const request = await fetch(
-      `${process.env.REACT_APP_ADRESS}heroes/${slug}`,
+      `https://new-hero-konexio.herokuapp.com/heroes/${slug}`,
       {
         method: "DELETE",
       }

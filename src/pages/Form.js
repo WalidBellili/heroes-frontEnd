@@ -42,7 +42,7 @@ const Form = () => {
       color,
       isAlive,
     };
-    const request = await fetch(`${process.env.REACT_APP_ADRESS}heroes`, {
+    const request = await fetch(`https://new-hero-konexio.herokuapp.com/heroes`, {
       method: "POST",
       headers: {
         "Content-Type": "Application/json",

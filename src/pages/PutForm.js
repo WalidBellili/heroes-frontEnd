@@ -44,7 +44,7 @@ const PutForm = () => {
       isAlive,
     };
     const request = await fetch(
-      `${process.env.REACT_APP_ADRESS}heroes/${slug}`,
+      `https://new-hero-konexio.herokuapp.com/heroes/${slug}`,
       {
         method: "PUT",
         headers: {
