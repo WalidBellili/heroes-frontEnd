@@ -42,7 +42,7 @@ const Form = () => {
       color,
       isAlive,
     };
-    const request = await fetch(`http://localhost:5000/heroes`, {
+    const request = await fetch(`${process.env.REACT_APP_ADRESS}heroes`, {
       method: "POST",
       headers: {
         "Content-Type": "Application/json",

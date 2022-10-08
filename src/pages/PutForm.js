@@ -43,13 +43,16 @@ const PutForm = () => {
       color,
       isAlive,
     };
-    const request = await fetch(`http://localhost:5000/heroes/${slug}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "Application/json",
-      },
-      body: JSON.stringify(body),
-    });
+    const request = await fetch(
+      `${process.env.REACT_APP_ADRESS}heroes/${slug}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "Application/json",
+        },
+        body: JSON.stringify(body),
+      }
+    );
 
     if (request.status === 400) {
       setError(request.statusText);

@@ -11,9 +11,7 @@ const Heros = () => {
   }, []);
 
   const fetchHeroes = async () => {
-    const request = await fetch(
-      `https://new-hero-konexio.herokuapp.com/heroes`
-    );
+    const request = await fetch(`${process.env.REACT_APP_ADRESS}heroes`);
     const response = await request.json();
     setHeroes(response);
   };

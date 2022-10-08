@@ -14,14 +14,19 @@ const SingleHeros = () => {
   }, [slug]);
 
   const fetchAHero = async () => {
-    const request = await fetch(`http://localhost:5000/heroes/${slug}`);
+    const request = await fetch(
+      `${process.env.REACT_APP_ADRESS}heroes/${slug}`
+    );
     const response = await request.json();
     setHero(response);
   };
   const handleDeleteClick = async () => {
-    const request = await fetch(`http://localhost:5000/heroes/${slug}`, {
-      method: "DELETE",
-    });
+    const request = await fetch(
+      `${process.env.REACT_APP_ADRESS}heroes/${slug}`,
+      {
+        method: "DELETE",
+      }
+    );
     console.log(request);
     navigate("/");
   };
