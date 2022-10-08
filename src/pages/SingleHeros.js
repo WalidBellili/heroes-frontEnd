@@ -15,7 +15,7 @@ const SingleHeros = () => {
 
   const fetchAHero = async () => {
     const request = await fetch(
-      `${process.env.REACT_APP_ADRESS}heroes/${slug}`
+      `https://new-hero-konexio.herokuapp.com/heroes/${slug}`
     );
     const response = await request.json();
     setHero(response);
